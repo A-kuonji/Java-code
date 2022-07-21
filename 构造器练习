@@ -1,0 +1,29 @@
+package bag1;
+
+import java.util.*; 
+
+public class First {
+	public static void main(String[] args) {
+		Scanner cin = new Scanner(System.in);
+		
+		person p1 = new person();
+		
+		person p2 = new person("kuonji", 17);
+		
+		System.out.println(p1.name + " " + p1.age + "岁");
+		System.out.println(p2.name + " " + p2.age + "岁");
+	}
+}
+
+class person {
+	String name;
+	int age;
+	public person() {
+		name = "Aozaki";
+		age = 17;
+	}
+	public person(String pName, int pAge) {
+		name = pName;
+		age = pAge;
+	}
+}
