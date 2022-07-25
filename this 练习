@@ -1,0 +1,28 @@
+package bag1;
+
+import java.util.*; 
+
+public class First {
+	public static void main(String[] args) {
+		Scanner cin = new Scanner(System.in);
+		
+		person p1 = new person("Aozaki", 17);
+		
+		person p2 = new person("kuonji", 17);
+		
+		if(p1.compare(p2)) System.out.println("kuonji, my one and only lover");
+		else System.out.println("kuonji, my one and only lover");
+	}
+}
+
+class person {
+	String name;
+	int age;
+	public person(String name, int age) {
+		this.name = name;
+		this.age = age;
+	}
+	public boolean compare(person p2) {
+		return this.name == p2.name && this.age == p2.age;
+	}
+}
