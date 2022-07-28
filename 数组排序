@@ -1,0 +1,42 @@
+package bag1;
+
+import java.util.Scanner; //表示引入util包的所有的类
+import java.util.Arrays;
+
+
+public class First {
+	public static void main(String[] args) {
+		Scanner cin = new Scanner(System.in);
+		
+		int[] a = new int[110];
+		
+		int n = cin.nextInt();
+		
+		for(int i = 0; i < n; i ++ ) a[i] = cin.nextInt();
+		
+		array arr = new array();
+		
+		arr.sort(n, a);//自写选择排序方法从大到小
+		for(int i = 0; i < n; i ++ ) System.out.print(a[i] + " ");
+		System.out.println();
+		
+		Arrays.sort(a, 0, 4);//系统方法排序从小到大
+		for(int i = 0; i < 5; i ++ ) System.out.print(a[i] + " ");			
+	}
+}
+
+class array {
+	public int[] sort(int n, int ... a) {
+		for(int i = 0; i < n; i ++ ) {
+			for(int j = i + 1; j < n; j ++ ) {
+				if(a[i] < a[j]) {
+					int tmp = a[i];
+					a[i] = a[j];
+					a[j] = tmp;
+				}
+			}
+		}
+		
+		return a;
+	}
+}
