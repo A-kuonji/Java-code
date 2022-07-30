@@ -1,0 +1,67 @@
+package OOP;
+
+/*
+不能随意查看人的年龄，工资等隐私，并对设置的年龄进行合理的验证，年龄合理就设置，
+否则给默认年龄，年龄必须在1-120之间，年龄、工资不能直接查看，name的长度在2-6之间
+*/
+
+public class Encapsulation1 {
+	public static void main(String[] args) {
+		person p1 = new person();
+		p1.setname("heyajun");
+		p1.setage(19);
+		p1.setsalary(0);
+		
+		//p1.info();
+		System.out.println(p1.getage());
+	}
+}
+
+class person {
+	public String name;//名字公开
+	private int age;//年龄隐藏
+	private double salary;
+	
+	public String getname() {
+		return name;
+	}
+	
+	public void setname(String name) {
+		if(name.length() <= 10 && name.length() >= 2) 
+			this.name = name;
+		else 
+		{
+			System.out.println("名字长度必须在2-10之间");
+			System.exit(0);
+		}			
+	}
+	
+	public int getage() {
+		System.out.println("不可以随意查看别人隐私哦");
+		System.exit(0);	
+		return age;		
+	}
+	
+	public void setage(int age) {
+		if(age <= 120 && age >= 0)
+			this.age = age;
+		else {
+			System.out.println("年龄不合法");
+			System.exit(0);
+		}
+	}
+	
+	public double getsalary() {
+		System.out.println("不可以随意查看别人隐私哦");
+		System.exit(0);		
+		return salary;
+	}
+	
+	public void setsalary(int salary) {
+		this.salary = salary;
+	}
+	
+	public void info() {
+		System.out.println("名字：" + this.name + "\n年龄：" + this.age + "\n工资：" + this.salary);
+	}
+}
