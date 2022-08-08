@@ -1,0 +1,32 @@
+package OOP.extend;
+
+public class theory {
+	public static void main(String[] args) {
+		son p = new son();
+		/*
+		 * 首先看子类是否有该属性
+		 * 如果有并且可以访问，则返回信息
+		 * 如果子类没有或者无法访问，则向上查找
+		 */
+		System.out.println(p.name);
+		System.out.println(p.hobby);
+		p.info();
+	}
+}
+
+class grandpa {
+	String name = "牛爷爷";
+	String hobby = "旅游";
+}
+
+class father extends grandpa {
+	String name = "胡英俊";
+	private int age = 39;
+	public void info() {
+		System.out.println(age);
+	}
+}
+
+class son extends father {
+	String name = "胡图图";
+}
